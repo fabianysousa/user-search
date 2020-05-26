@@ -20,7 +20,8 @@ async function doFetch() {
     'https://randomuser.me/api/?seed=javascript&results=100&nat=BR&noinfo'
   );
   const dataResponse = await response.json();
-  console.log(dataResponse);
+  const arrayDataResponse = dataResponse.results;
+  console.log(arrayDataResponse);
 }
 
 function usersFound() {
