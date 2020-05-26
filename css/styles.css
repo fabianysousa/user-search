@@ -11,6 +11,14 @@
   color: #fff;
 }
 
+.list-statistics {
+  font-size: 0.5em;
+}
+
+h1 {
+  padding-bottom: 1em;
+}
+
 .user-found,
 .statistics {
   margin-top: 2em;
