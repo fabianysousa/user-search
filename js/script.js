@@ -1,49 +1,52 @@
-let genderFemaleSum = null;
-let countGenderFemaleSum = 0;
+let globalUsers = null;
 
-let genderMaleSum = null;
-let cauntGenderMaleSum = 0;
+start();
 
-let ageSum = null;
-let cauntAgeSum = 0;
+function start() {
+  fetchPeople();
+  //hideSpinner();
+}
 
-let averageAges = null;
-
-window.addEventListener('load', function () {
-  doFetch();
-  usersFound();
-  statistics();
-});
-
-async function doFetch() {
+async function fetchPeople() {
   const response = await fetch(
     'https://randomuser.me/api/?seed=javascript&results=100&nat=BR&noinfo'
   );
-  const dataResponse = await response.json();
-  const arrayDataResponse = dataResponse.results;
-  console.log(arrayDataResponse);
+  const dateResponse = await response.json();
+  console.log(dateResponse);
+  globalUsers = dateResponse.results.map(({ gender, name, dob }) => {
+    return {
+      gender,
+      name,
+      age: dob.age,
+      name_lowercase: (name.first + ' ' + name.last).toLowerCase(),
+    };
+  });
 }
 
-function usersFound() {
-  quantityUsersFound();
-  quantityRenderUsers();
+function statistics(users) {
+  let countSumGenderFemale = 0;
+  let countSumGenderMale = 0;
+  let sumAge = 0;
+  let averageAge = 0;
+  users.forEach((user) => {
+    sumAge += user.age;
+    if (user.gender === 'female') {
+      countSumGenderFemale++;
+    } else {
+      countSumGenderMale++;
+    }
+  });
+  averageAge = sumAge / users.length;
+  return {
+    sumMen: countSumGenderMale,
+    sumWomen: countSumGenderFemale,
+    sumAge,
+    averageAge,
+  };
 }
 
-function statistics() {
-  quantityGenderFemale();
-  quantityGenderMale();
-  quantityAge();
-  averageAge();
-}
-
-function quantityUsersFound() {}
-
-function quantityRenderUsers() {}
-
-function quantityGenderFemale() {}
-
-function quantityGenderMale() {}
-
-function quantityAge() {}
-
-function averageAge() {}
+// // aguardando
+// function hideSpinner() {
+//   const spinner = document.querySelectorAll('.spinner');
+//   spinner.classList.add('hide');
+// }
