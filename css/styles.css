@@ -6,6 +6,12 @@
   font-family: 'Bebas Neue', cursive;
 }
 
+.spinner {
+  color: #393b36;
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+}
+
 .button-search {
   background-color: #111;
   color: #fff;

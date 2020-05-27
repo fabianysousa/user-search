@@ -24,29 +24,42 @@
       </div>
       <div class="row">
         <div class="spinner col s12 center">
-          <h1>...Aguarde</h1>
+          <h1>...wait please</h1>
         </div>
       </div>
       <div class="">
-        <div class="search row col s12 center">
-          <input class="call-search" type="search" id="name" value="Name" />
-          <input class="button-search" type="submit" value="Submit" />
+        <div class="flex-row">
+          <div class="input-field col s6">
+            <input
+              value=""
+              id="search_name"
+              type="text"
+              placeholder="Insert user name"
+              class="validate"
+              onchange="searchUsers(value)"
+            />
+          </div>
         </div>
+        <button
+          class="btn waves-effect waves-light"
+          type="submit"
+          name="search_name"
+        >
+          Search
+        </button>
       </div>
       <div class="information row">
         <div class="user-found col s6 center">
-          <div>
-            <h2 class="count-users-found">Users found</h2>
+          <div id="user-found">
+            <h2 class="count-users-found">Users found:</h2>
           </div>
         </div>
-        <div class="statistics col s6 center">
+
+        <div id="divStatistics" class="statistics col s6 center">
           <div>
             <h1>Statistics:</h1>
             <ul class="list-statistics">
-              <li class="total-users-female">Sex female:</li>
-              <li class="total-users-male">Sex male:</li>
-              <li class="total-sum-ages">Sum of ages:</li>
-              <li class="total-average-ages">Average of ages:</li>
+              <span>No filtered users</span>
             </ul>
           </div>
         </div>
