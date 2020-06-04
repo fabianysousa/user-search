@@ -1,7 +1,7 @@
 <h1 align="center">User Search</h1>
 
 <div align="center">
-    <img src="https://ik.imagekit.io/fabianysousa/User_search_FfZgPmjpJ.gif">
+    <img src="https://ik.imagekit.io/fabianysousa/user-search_i7-3KaaOZ.gif">
 </div>
 
 ---
