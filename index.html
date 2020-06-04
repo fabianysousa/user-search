@@ -13,51 +13,68 @@
     />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/styles.css" />
-    <title>Document</title>
+
+    <title>User search</title>
   </head>
   <body>
     <div class="container">
       <div class="row">
-        <div class="user-search col s12 center">
+        <div class="page-title col s12 center">
           <h1>User search</h1>
         </div>
       </div>
       <div class="row">
-        <div class="spinner col s12 center">
-          <h1>...wait please</h1>
-        </div>
-      </div>
-      <div class="">
-        <div class="flex-row">
-          <div class="input-field col s6">
-            <input
-              value=""
-              id="search_name"
-              type="text"
-              placeholder="Insert user name"
-              class="validate"
-              onchange="searchUsers(value)"
-            />
+        <div class="preloader col s12 center">
+          <div class="preloader-wrapper active">
+            <div class="spinner-layer">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div>
+              <div class="gap-patch">
+                <div class="circle"></div>
+              </div>
+              <div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
           </div>
         </div>
-        <button
-          class="btn waves-effect waves-light"
-          type="submit"
-          name="search_name"
-        >
-          Search
-        </button>
+        <div class="text-preloader center">
+          <h3>...wait please</h3>
+        </div>
+      </div>
+      <div class="input flex-row">
+        <div class="input-field col s6">
+          <input
+            value=""
+            id="search_name"
+            type="text"
+            placeholder="Insert user name"
+            class="validate"
+            onchange="searchUsers(value)"
+          />
+        </div>
+        <div class="input-button">
+          <button
+            class="btn waves-effect waves-light"
+            type="submit"
+            name="search_name"
+          >
+            Search
+          </button>
+        </div>
       </div>
       <div class="information row">
         <div class="user-found col s6 center">
-          <div id="user-found">
+          <div id="user-found-info">
             <h2 class="count-users-found">Users found:</h2>
+            <div class="users-info"></div>
           </div>
         </div>
 
         <div id="divStatistics" class="statistics col s6 center">
           <div>
-            <h1>Statistics:</h1>
+            <h2>Statistics:</h1>
             <ul class="list-statistics">
               <span>No filtered users</span>
             </ul>

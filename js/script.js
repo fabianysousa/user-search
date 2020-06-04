@@ -29,19 +29,26 @@ function searchUsers(name) {
   const elementListStatistics = document.getElementsByClassName(
     'list-statistics'
   );
-
-  const elementUserFound = document.getElementsById('user-found');
+  const elementListUserFound = document.getElementsByClassName('users-info');
 
   if (filteredUsers.length > 0) {
-    let infoUserElement = '<div>';
-    filteredUsers.forEach((user) => {});
+    let infoUserElement = '';
 
+    filteredUsers.forEach((user) => {
+      infoUserElement += `
+      <div class="user-info">
+      <img class="perfilUser" src="${user.picture.medium}"/></li>
+      <h2 class="info-user">${user.name.first} ${user.name.last}, ${user.age}</h2>
+      </div>
+      `;
+    });
+    elementListUserFound[0].innerHTML = infoUserElement;
     const statistics = statisticsUsers(filteredUsers);
     if (name !== '') {
-      elementListStatistics[0].innerHTML = `<li class="total-users-female">Sex female:${statistics.sumWomen}</li>
-      <li class="total-users-male">Sex male:${statistics.sumMen}</li>
-      <li class="total-sum-ages">Sum of ages:${statistics.sumAge}</li>
-      <li class="total-average-ages">Average of ages:${statistics.averageAge}</li>`;
+      elementListStatistics[0].innerHTML = `<li class="list-item">Sex female:${statistics.sumWomen}</li>
+      <li class="list-item">Sex male:${statistics.sumMen}</li>
+      <li class="list-item">Sum of ages:${statistics.sumAge}</li>
+      <li class="list-item">Average of ages:${statistics.averageAge}</li>`;
     }
   } else {
     elementListStatistics[0].innerHTML = `<span> No filtered users </span>`;
