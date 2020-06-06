@@ -20,6 +20,7 @@ O desafio foi desenvolvido utilizando as seguintes tecnologias:
 - [HTML](https://devdocs.io/html/)
 - [Materialize](https://materializecss.com/getting-started.html)
 - [JavaScript](https://devdocs.io/javascript/)
+- [Node](https://nodejs.org)
 
 ---
 
@@ -41,7 +42,7 @@ O desafio foi desenvolvido utilizando as seguintes tecnologias:
 
 ## 💡 Insight
 
-Primeira vez que utilizo uma API, foi um pouco trabalhoso mas muito interessante. No processo entendi como fazia requisição API utilizando em json e filtragem dos dados necessários a serem utilizados. Com o JavaScript pude colocar em prática funções como map(), filter() e forEach().
+Primeira vez que utilizo uma API, foi um pouco trabalhoso mas muito interessante. No processo entendi como fazia requisição API utilizando em json e filtragem dos dados necessários a serem utilizados.Utilizei node e com o JavaScript pude colocar em prática funções como map(), filter() e forEach().
 
 ---
 
